@@ -15,7 +15,7 @@ sockServer.on('connection', function(conn) {
     const stream = msg[2]
     const matches = filePath.match(/_(.+)_(.+)_(\d*)\./)
 
-    if (matches && matches.length === 3) {
+    if (matches && matches.length === 4) {
       const streamData = {
         recordist: matches[1],
         file: matches[2],
