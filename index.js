@@ -12,6 +12,7 @@ var oscServer = new osc.Server(2718, '0.0.0.0');
 sockServer.on('connection', function(conn) {
   oscServer.on("message", function (msg, rinfo) {
     const filePath = msg[1]
+	.replace(/C6/, 'ö').replace(/C\$/, 'ä').replace(/C\(/, 'è')
     const stream = msg[2]
     const matches = filePath.match(/_(.+)_(.+)_(\d*)\./)
 
