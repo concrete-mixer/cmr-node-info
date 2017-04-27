@@ -55,7 +55,9 @@ sockServer.on('connection', function(conn) {
     var streamData = getStreamData(msg)
 
     if (streamData) {
-      conn.write(JSON.stringify(streamData))
+      setTimeout(function() {
+        conn.write(JSON.stringify(streamData))
+      }, 10000)
     }
   })
 
